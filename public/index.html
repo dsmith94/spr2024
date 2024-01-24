@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" content="#242424"/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="round.css" rel="stylesheet">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<title>SpringThing 2024</title>
+	<script>
+		var Game = {
+			rooms: {},
+            actions: {},
+            directions: {},
+            input: 'look around',
+			header: '',
+			location: '',
+			things: {},
+			items: {},
+			commands: {},
+			treasure: {},
+			musicToggle: true,
+			turns: 0,
+			score: 0,
+		};
+	</script>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Handlee&display=swap');
+	</style>
+	<link rel="stylesheet" type="text/css" href="style.css"></link>
+</head>
+
+<body>
+	<div class="console" id="console"></div>
+	<div class="header" id="header">
+	</div>
+	<script src="adv.min.js"></script>
+</body>
+
+</html>

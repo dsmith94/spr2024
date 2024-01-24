@@ -1,0 +1,228 @@
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url('Montserrat-Light.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat-LightItalic';
+  src: url('Montserrat-LightItalic.otf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url('Montserrat-Bold.otf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat-BoldItalic';
+  src: url('Montserrat-BoldItalic.otf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'note paper';
+  src: url('note-paper.regular.otf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+:root {
+  font-family: 'Montserrat-Light', serif, Courier, monospace;
+  font-size: x-large;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: #3F1D38;
+  overflow-x: auto;
+  overflow-y: scroll;
+  line-height: 1.5em;
+
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+
+div.console {
+  margin: 1em;
+  margin-top: 4em;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.parser {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+}
+
+span.parser {
+  font-size: 150%;
+}
+
+div.cursor {
+  margin-left: 1em;
+  animation-name: cursor-blink;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in;
+	animation-duration: 3s;
+}
+
+div.header {
+  left: 0;
+  top: 0;
+  width: 98%;
+  height: 1.5em;
+  background-color: #4D3C77;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: row;
+  padding: 1%;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;
+}
+
+div.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+
+div.directions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+
+div.command-line {
+  margin-top: 2em;
+  margin-bottom: 1.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  background: linear-gradient(187deg, rgba(0,0,0,0.22), rgba(126,126,126,0.25));
+  box-shadow: 6px 6px 8px 0 rgba(0, 0, 0, 0.25),
+  -4px -4px 6px 0 rgba(255, 255, 255, 0.3);
+}
+
+
+div.command-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+button.console {
+  background-color: transparent;
+  border: 0px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 25%;
+}
+
+
+button.action {
+  aspect-ratio: 1;
+  background-color: #E19898;
+  border: 0px;
+  align-items: center;
+  border-radius: 2em;
+  display: flex;
+  justify-content: center;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  width: 6em; 
+  color: #3F1D38;
+  box-shadow: 
+  6px 6px 8px 0 rgba(0, 0, 0, 0.25),
+  -4px -4px 6px 0 rgba(255, 255, 255, 0.3);
+}
+
+
+button.direction {
+  aspect-ratio: 1;
+  background-color: #A2678A;
+  border: 0px;
+  align-items: center;
+  border-radius: 2em;
+  display: flex;
+  justify-content: center;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  width: 6em;
+  color: #3F1D38;
+  box-shadow: 
+  6px 6px 8px 0 rgba(0, 0, 0, 0.25),
+  -4px -4px 6px 0 rgba(255, 255, 255, 0.3);
+}
+
+
+span.icon {
+  font-size: 250%;
+}
+
+
+@keyframes cursor-blink {
+  0% {
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1.0;
+  }
+  100% {
+    opacity: 0.0;
+  }
+}
+
+
+@media (max-width: 720px) {
+
+  :root {
+    font-size: large;
+  }
+
+  span.icon {
+    font-size: 175%;
+  }
+  span.parser {
+    font-size: 100%;
+  }
+  
+  div.cursor {
+    margin-left: 0.25em;
+    animation-name: cursor-blink;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-duration: 3s;
+  }
+}
