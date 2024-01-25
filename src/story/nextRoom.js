@@ -1,8 +1,8 @@
 
-Game.rooms.startRoom = () => {
+Game.rooms.nextRoom = () => {
     
-    header('Start Room')
-    desc(() => `This is the <<first>> "room".`)
+    header('Next Room')
+    desc(() => `This is the <<next>> "room".`)
 
 
     look(showDesc)

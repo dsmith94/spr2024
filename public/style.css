@@ -27,8 +27,8 @@
 }
 
 @font-face {
-  font-family: 'note paper';
-  src: url('note-paper.regular.otf') format('truetype');
+  font-family: 'arbitus';
+  src: url('arbitus.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
@@ -36,7 +36,7 @@
 
 :root {
   font-family: 'Montserrat', serif, Courier, monospace;
-  font-size: x-large;
+  font-size: larger;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.7);
@@ -55,7 +55,7 @@
 
 h1 {
   line-height: 1.5;
-  font-family: 'note paper';
+  font-family: 'arbitus';
   font-size: 3.2em;
   text-align: center;
 }
@@ -63,7 +63,7 @@ h1 {
 
 h3 {
   line-height: 1.5;
-  font-family: 'note paper';
+  font-family: 'arbitus';
   font-size: 2.5em;
   text-align: center;
 }
@@ -161,7 +161,7 @@ div.button-group {
   justify-content: center;
   align-items: center;
   font-size: small;
-  margin-left: 0.1.em;
+  margin-left: 0.1em;
   margin-right: 0.1em;
 }
 
@@ -238,8 +238,8 @@ button.action {
   width: 6em; 
   color: rgba(255, 255, 255, 0.7);
   box-shadow: 
-  6px 6px 8px 0 rgba(0, 0, 0, 0.25),
-  -4px -4px 6px 0 rgba(255, 255, 255, 0.3);
+  6px 6px 8px 0 rgba(0, 0, 0, 0.19),
+  -4px -4px 6px 0 rgba(128, 128, 128, 0.3);
 }
 
 
@@ -256,13 +256,13 @@ button.direction {
   width: 6em;
   color: rgba(255, 255, 255, 0.7);
   box-shadow: 
-  6px 6px 8px 0 rgba(0, 0, 0, 0.25),
-  -4px -4px 6px 0 rgba(255, 255, 255, 0.3);
+  6px 6px 8px 0 rgba(0, 0, 0, 0.19),
+  -4px -4px 6px 0 rgba(128, 128, 128, 0.2);
 }
 
 
 button.topic {
-  background-color: #A2678A;
+  background-color: #533483;
   border: 0px;
   align-items: center;
   border-radius: 2em;
@@ -270,11 +270,11 @@ button.topic {
   justify-content: center;
   margin-left: 0.25em;
   margin-right: 0.25em;
-  padding: 0.2em;
-  color: #3F1D38;
+  padding: 1em;
+  color: rgba(255, 255, 255, 0.7);
   box-shadow: 
-  6px 6px 8px 0 rgba(0, 0, 0, 0.25),
-  -4px -4px 6px 0 rgba(255, 255, 255, 0.3);
+  6px 6px 8px 0 rgba(0, 0, 0, 0.19),
+  -4px -4px 6px 0 rgba(128, 128, 128, 0.3);
 }
 
 

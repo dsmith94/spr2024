@@ -97,16 +97,38 @@ function showDesc() {
 
 
 function set_game_action(a) {
-    try {
-        const input = Game['actions'][a]['preview'];
+    if (Game['actions'][a]) {
+        try {
+            const input = Game['actions'][a]['preview'];
+            if (input) {
+                Game.input = input;
+                Game.command = a;
+                refresh();
+            }    
+        } catch {
+            console.log(`Action ${a} not implemented`)
+        }    
+    }
+}
+
+
+function set_game_topic(t) {
+
+    if (Game.topics[t]) {
+
+        const input = Game['topics'][t]['preview'];
         if (input) {
             Game.input = input;
-            Game.command = a;
+            Game.command = t;
             refresh();
         }    
-    } catch {
-        console.log(`Action ${a} not implemented`)
     }
+
+}
+
+
+function topics(t) {
+    Game.topics = t;
 }
 
 
@@ -121,13 +143,20 @@ function backspace_action() {
 function execute_action() {
     const c = document.querySelector('#console');
     const i = Game.input;
-    const a = Game.command;
-    c.append(previous_command_line(i));
-    const content = Game['actions'][a]['action']();
-    Game.input = '';
-    Game.command = '';
-    msg(content);
-    refresh();
+    let a = Game.command;
+    if (Game.input) {
+        c.append(previous_command_line(i));
+        let content = '';
+        if (Number.isInteger(a)) {
+            content = Game['topics'][a]['action']();
+        } else {
+            content = Game['actions'][a]['action']();
+        }
+        Game.input = '';
+        Game.command = '';
+        msg(content);
+        refresh();    
+    }
 }
 
 
@@ -163,6 +192,23 @@ function create_button(cls, icn, func) {
     if (icn === 'check') {
         div.append('Continue');
     }
+    return div;
+}
+
+
+
+function create_topic_button(topic, index, func) {
+    const div = document.createElement('div');
+    div.className = 'button-group';
+    const b = document.createElement('button');
+    b.className = 'topic';
+    b.onclick = () => {
+        console.log(index)
+        func();
+    }
+    b.append(topic.word);
+    div.append(b);
+    div.append(`${index + 1}`);
     return div;
 }
 
@@ -233,6 +279,18 @@ function direction_row() {
     div.append(b2);
     div.append(b3);
     div.append(b4);
+    return div;
+}
+
+
+function topic_row() {
+    const div = document.createElement('div');
+    div.className = 'topics';
+    for (let i = 0; i < Game.topics.length; i += 1) {
+        const t = Game.topics[i];
+        const b = create_topic_button(t, i, () => set_game_topic(i));
+        div.append(b);
+    }
     return div;
 }
 
@@ -316,7 +374,9 @@ function add_control_box() {
     if (Game.actions['continue']) {
         const a = check_row();
         div.append(a);
-    } else if (Game.topics.length > 0) { 
+    } else if (Game.topics.length > 0) {
+        const a = topic_row();
+        div.append(a);
     } else {
         const a = action_row();
         const d = direction_row();
@@ -365,53 +425,6 @@ function start() {
     refresh();
 }
 
-
-addEventListener('keyup', e => {
-
-    const key = e.key.toLocaleLowerCase();
-
-    if (key === 'l') {
-        set_game_action('look');
-    }
-
-    if (key === 'u') {
-        set_game_action('use');
-    }
-
-    if (key === 't') {
-        set_game_action('talk');
-    }
-
-    if (key === 'h') {
-        set_game_action('help');
-    }
-
-    if (key === 'arrowleft' || key === 'a') {
-        set_game_action('west');
-    }
-
-    if (key === 'arrowright' || key === 'd') {
-        set_game_action('east');
-    }
-
-    if (key === 'arrowup' || key === 'w') {
-        set_game_action('north');
-    }
-
-    if (key === 'arrowdown' || key === 's') {
-        set_game_action('south');
-    }
-
-    if (key === 'enter') {
-        execute_action();
-    }
-
-    if (key === 'backspace') {
-        backspace_action();
-    }
-
-
-});
 
 addEventListener('DOMContentLoaded', () => {
     start();
