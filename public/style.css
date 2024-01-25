@@ -1,12 +1,12 @@
 @font-face {
-  font-family: 'Montserrat-Light';
+  font-family: 'Montserrat';
   src: url('Montserrat-Light.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Montserrat-LightItalic';
+  font-family: 'Montserrat';
   src: url('Montserrat-LightItalic.otf') format('truetype');
   font-weight: normal;
   font-style: italic;
@@ -35,12 +35,12 @@
 
 
 :root {
-  font-family: 'Montserrat-Light', serif, Courier, monospace;
+  font-family: 'Montserrat', serif, Courier, monospace;
   font-size: x-large;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.7);
-  background-color: #3F1D38;
+  background-color: #182747;
   overflow-x: auto;
   overflow-y: scroll;
   line-height: 1.5em;
@@ -50,6 +50,22 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
+}
+
+
+h1 {
+  line-height: 1.5;
+  font-family: 'note paper';
+  font-size: 3.2em;
+  text-align: center;
+}
+
+
+h3 {
+  line-height: 1.5;
+  font-family: 'note paper';
+  font-size: 2.5em;
+  text-align: center;
 }
 
 
@@ -85,7 +101,7 @@ div.header {
   top: 0;
   width: 98%;
   height: 1.5em;
-  background-color: #4D3C77;
+  background-color: #0F3460;
   color: rgba(255, 255, 255, 0.7);
   display: flex;
   flex-direction: row;
@@ -109,6 +125,64 @@ div.directions {
   justify-content: center;
   align-items: center;
   margin-bottom: 2px;
+}
+
+
+
+div.topics {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2px;
+  flex-wrap: wrap;
+}
+
+
+
+div.previous-command-line {
+  margin-top: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+
+
+div.msg {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+
+div.button-group {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+  margin-left: 0.1.em;
+  margin-right: 0.1em;
+}
+
+
+div.room-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5em;
+  height: 3em;
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+p {
+  text-indent: 0.75em;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 
@@ -153,16 +227,16 @@ button.console {
 
 button.action {
   aspect-ratio: 1;
-  background-color: #E19898;
+  background-color: #533483;
   border: 0px;
   align-items: center;
   border-radius: 2em;
   display: flex;
   justify-content: center;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
   width: 6em; 
-  color: #3F1D38;
+  color: rgba(255, 255, 255, 0.7);
   box-shadow: 
   6px 6px 8px 0 rgba(0, 0, 0, 0.25),
   -4px -4px 6px 0 rgba(255, 255, 255, 0.3);
@@ -171,15 +245,32 @@ button.action {
 
 button.direction {
   aspect-ratio: 1;
+  background-color: #371B58;
+  border: 0px;
+  align-items: center;
+  border-radius: 2em;
+  display: flex;
+  justify-content: center;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  width: 6em;
+  color: rgba(255, 255, 255, 0.7);
+  box-shadow: 
+  6px 6px 8px 0 rgba(0, 0, 0, 0.25),
+  -4px -4px 6px 0 rgba(255, 255, 255, 0.3);
+}
+
+
+button.topic {
   background-color: #A2678A;
   border: 0px;
   align-items: center;
   border-radius: 2em;
   display: flex;
   justify-content: center;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  width: 6em;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  padding: 0.2em;
   color: #3F1D38;
   box-shadow: 
   6px 6px 8px 0 rgba(0, 0, 0, 0.25),
