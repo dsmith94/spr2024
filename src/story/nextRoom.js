@@ -2,7 +2,7 @@
 Game.rooms.nextRoom = () => {
     
     header('Next Room')
-    desc(() => `This is the <<next>> "room".`)
+    desc(() => `This is the {<next>} "room".`)
 
 
     look(showDesc)

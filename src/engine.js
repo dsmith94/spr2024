@@ -394,6 +394,8 @@ function msg(content) {
     content = SmartyPants(content);
     content = content.split('\n\n');
     content = `<p>${content.join('</p><p>')}</p>`;
+    content = content.replaceAll('{<', '<b>');
+    content = content.replaceAll('>}', '</b>');
     content = content.replaceAll('<<', '<i>');
     content = content.replaceAll('>>', '</i>');
     p.innerHTML = content;
